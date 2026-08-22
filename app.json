@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/calendar/calendar",
+    "pages/courseList/courseList",
+    "pages/courseDetail/courseDetail",
+    "pages/addCourse/addCourse",
+    "pages/addNote/addNote",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "教师日历",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#4A90E2",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/calendar/calendar",
+        "text": "日历",
+        "iconPath": "images/tabbar/calendar.png",
+        "selectedIconPath": "images/tabbar/calendar-active.png"
+      },
+      {
+        "pagePath": "pages/courseList/courseList",
+        "text": "课程",
+        "iconPath": "images/tabbar/course.png",
+        "selectedIconPath": "images/tabbar/course-active.png"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "images/tabbar/setting.png",
+        "selectedIconPath": "images/tabbar/setting-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
