@@ -1,0 +1,108 @@
+<view class="add-course-container">
+  <view class="form-section">
+    <!-- 课程名称 -->
+    <view class="form-group">
+      <label class="form-label required">课程名称</label>
+      <input type="text" placeholder="如：数学、英语"
+        bindinput="onInputName"
+        value="{{course.name}}" />
+    </view>
+
+    <!-- 课程类型 -->
+    <view class="form-group">
+      <label class="form-label required">课程类型</label>
+      <picker bindchange="onRepeatTypeChange" value="{{course.repeatType}}" range="['once', 'weekly']" range-key="name">
+        <view class="picker-item">
+          {{course.repeatType === 'once' ? '一次性课程' : '周期性课程'}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 时间 -->
+    <view class="form-group">
+      <label class="form-label required">课程时间</label>
+      <view class="time-input-group">
+        <view class="time-input">
+          <label>开始</label>
+          <input type="time" bindinput="onStartTimeChange" value="{{course.startTime}}" />
+        </view>
+        <view class="time-dash">-</view>
+        <view class="time-input">
+          <label>结束</label>
+          <input type="time" bindinput="onEndTimeChange" value="{{course.endTime}}" />
+        </view>
+      </view>
+    </view>
+
+    <!-- 一次性课程：日期 -->
+    <view class="form-group" wx:if="{{course.repeatType === 'once'}}">
+      <label class="form-label required">课程日期</label>
+      <input type="date" bindinput="onDateChange" value="{{course.date}}" />
+    </view>
+
+    <!-- 周期性课程：日期范围和星期 -->
+    <view wx:if="{{course.repeatType === 'weekly'}}">
+      <view class="form-group">
+        <label class="form-label required">开始日期</label>
+        <input type="date" bindinput="onStartDateChange" value="{{course.startDate}}" />
+      </view>
+
+      <view class="form-group">
+        <label class="form-label required">结束日期</label>
+        <input type="date" bindinput="onEndDateChange" value="{{course.endDate}}" />
+      </view>
+
+      <view class="form-group">
+        <label class="form-label required">上课日期</label>
+        <view class="weekday-selector">
+          <view class="weekday-item {{item.selected ? 'selected' : ''}}" 
+            wx:for="{{availableWeekdays}}" 
+            wx:key="id"
+            data-index="{{index}}"
+            bindtap="onWeekdayToggle">
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 班级 -->
+    <view class="form-group">
+      <label class="form-label">班级</label>
+      <input type="text" placeholder="如：高一(1)班"
+        bindinput="onInputClassName"
+        value="{{course.className}}" />
+    </view>
+
+    <!-- 地点 -->
+    <view class="form-group">
+      <label class="form-label">地点</label>
+      <input type="text" placeholder="如：学校A教室"
+        bindinput="onInputLocation"
+        value="{{course.location}}" />
+    </view>
+
+    <!-- 教师 -->
+    <view class="form-group">
+      <label class="form-label">教师</label>
+      <input type="text" placeholder="如：张三老师"
+        bindinput="onInputTeacher"
+        value="{{course.teacher}}" />
+    </view>
+
+    <!-- 备注 -->
+    <view class="form-group">
+      <label class="form-label">备注</label>
+      <textarea placeholder="添加备注信息"
+        bindinput="onInputNotes"
+        value="{{course.notes}}"
+        style="height: 100px;"></textarea>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="form-buttons">
+    <view class="btn btn-secondary" bindtap="onCancel">取消</view>
+    <view class="btn btn-primary" bindtap="onSaveCourse">保存</view>
+  </view>
+</view>

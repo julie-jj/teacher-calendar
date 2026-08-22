@@ -1,0 +1,61 @@
+<view class="course-detail-container">
+  <view wx:if="{{course}}" class="course-content">
+    <!-- 课程名称 -->
+    <view class="course-header card">
+      <view class="course-title">{{course.name}}</view>
+      <view class="course-type" wx:if="{{course.repeatType === 'weekly'}}">
+        📅 周期性课程
+      </view>
+      <view class="course-type" wx:else>
+        📄 一次性课程
+      </view>
+    </view>
+
+    <!-- 基本信息 -->
+    <view class="info-section card">
+      <view class="section-title">基本信息</view>
+      
+      <view class="info-item">
+        <view class="label">⏰ 课程时间</view>
+        <view class="value">{{course.startTime}} - {{course.endTime}}</view>
+      </view>
+
+      <view class="info-item" wx:if="{{course.repeatType !== 'weekly'}}">
+        <view class="label">📆 课程日期</view>
+        <view class="value">{{course.date}}</view>
+      </view>
+
+      <view class="info-item" wx:if="{{course.repeatType === 'weekly'}}">
+        <view class="label">🔄 周期</view>
+        <view class="value">每周重复</view>
+      </view>
+
+      <view class="info-item" wx:if="{{course.className}}">
+        <view class="label">👥 班级</view>
+        <view class="value">{{course.className}}</view>
+      </view>
+
+      <view class="info-item" wx:if="{{course.location}}">
+        <view class="label">📍 地点</view>
+        <view class="value">{{course.location}}</view>
+      </view>
+
+      <view class="info-item" wx:if="{{course.teacher}}">
+        <view class="label">👨‍🏫 教师</view>
+        <view class="value">{{course.teacher}}</view>
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="info-section card" wx:if="{{course.notes}}">
+      <view class="section-title">备注</view>
+      <view class="notes-text">{{course.notes}}</view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <view class="btn btn-primary" bindtap="onEditCourse">✏️ 编辑</view>
+      <view class="btn btn-danger" bindtap="onDeleteCourse">🗑️ 删除</view>
+    </view>
+  </view>
+</view>

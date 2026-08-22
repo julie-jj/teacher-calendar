@@ -1,0 +1,38 @@
+<view class="add-note-container">
+  <view class="form-section">
+    <!-- 备注内容 -->
+    <view class="form-group">
+      <label class="form-label required">备注内容</label>
+      <textarea placeholder="输入备注内容..."
+        bindinput="onInputContent"
+        value="{{note.content}}"
+        style="height: 150px;"></textarea>
+    </view>
+
+    <!-- 日期 -->
+    <view class="form-group">
+      <label class="form-label">日期</label>
+      <input type="date" bindinput="onDateChange" value="{{note.date}}" />
+    </view>
+
+    <!-- 优先级 -->
+    <view class="form-group">
+      <label class="form-label">优先级</label>
+      <picker bindchange="onPriorityChange" value="{{note.priority}}" range="['低', '普通', '高']">
+        <view class="picker-item">{{note.priority}}</view>
+      </picker>
+    </view>
+
+    <!-- 提醒时间 -->
+    <view class="form-group">
+      <label class="form-label">提醒时间（可选）</label>
+      <input type="time" bindinput="onTimeChange" value="{{note.time}}" />
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="form-buttons">
+    <view class="btn btn-secondary" bindtap="onCancel">取消</view>
+    <view class="btn btn-primary" bindtap="onSaveNote">保存</view>
+  </view>
+</view>
