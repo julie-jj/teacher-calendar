@@ -1,0 +1,173 @@
+.index-container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 假期倒计时卡片 */
+.holiday-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.holiday-content {
+  text-align: center;
+}
+
+.holiday-days {
+  font-size: 64rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.holiday-text {
+  font-size: 28rpx;
+  opacity: 0.9;
+  margin-bottom: 8rpx;
+}
+
+.holiday-dates {
+  font-size: 24rpx;
+  opacity: 0.8;
+}
+
+/* 今日信息卡片 */
+.today-card {
+  margin-bottom: 20rpx;
+}
+
+.today-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.today-date {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.today-weekday {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 5rpx;
+}
+
+.calendar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rpx 15rpx;
+  background-color: #f0f0f0;
+  border-radius: 8rpx;
+  cursor: pointer;
+}
+
+.btn-icon {
+  font-size: 32rpx;
+  margin-bottom: 5rpx;
+}
+
+.btn-text {
+  font-size: 20rpx;
+  color: #666;
+}
+
+/* 分区 */
+.section {
+  margin-bottom: 20rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+  padding: 0 10rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-btn {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 课程卡片 */
+.course-card {
+  margin-bottom: 10rpx;
+  padding: 15rpx;
+  border-left: 4rpx solid #4A90E2;
+}
+
+.course-time {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #4A90E2;
+  margin-bottom: 8rpx;
+}
+
+.course-name {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.course-location,
+.course-class {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 5rpx;
+}
+
+/* 代办卡片 */
+.todo-card {
+  margin-bottom: 10rpx;
+  padding: 15rpx;
+  border-left: 4rpx solid #52C41A;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.todo-title {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+}
+
+.todo-priority {
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  background-color: #FFF1F0;
+  color: #F5222D;
+  border-radius: 20rpx;
+  margin-left: 10rpx;
+}
+
+.todo-time {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}

@@ -1,0 +1,75 @@
+<view class="settings-container">
+  <!-- 假期管理 -->
+  <view class="section">
+    <view class="section-header flex-between">
+      <view class="section-title">假期管理</view>
+      <view class="add-btn" bindtap="onShowAddForm">+</view>
+    </view>
+
+    <view wx:if="{{holidays.length > 0}}">
+      <view class="holiday-item card" wx:for="{{holidays}}" wx:key="id">
+        <view class="holiday-header flex-between">
+          <view class="holiday-name">{{item.name}}</view>
+          <view class="delete-btn" data-id="{{item.id}}" bindtap="onDeleteHoliday">×</view>
+        </view>
+        <view class="holiday-date">{{item.startDate}} - {{item.endDate}}</view>
+      </view>
+    </view>
+    <view wx:else class="empty-state">
+      <view class="empty-state-text">暂无假期设置</view>
+    </view>
+  </view>
+
+  <!-- 添加假期表单 -->
+  <view class="add-holiday-form card" wx:if="{{showAddHolidayForm}}">
+    <view class="form-title">添加假期</view>
+    
+    <view class="form-group">
+      <label class="form-label">假期名称</label>
+      <input type="text" placeholder="如：春节、暑假" 
+        bindinput="onInputHolidayName"
+        value="{{newHoliday.name}}" />
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">开始日期</label>
+      <input type="date" 
+        bindinput="onInputStartDate"
+        value="{{newHoliday.startDate}}" />
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">结束日期</label>
+      <input type="date" 
+        bindinput="onInputEndDate"
+        value="{{newHoliday.endDate}}" />
+    </view>
+
+    <view class="form-actions flex-row">
+      <view class="btn btn-secondary" bindtap="onCancelAddForm">取消</view>
+      <view class="btn btn-primary" bindtap="onAddHoliday">保存</view>
+    </view>
+  </view>
+
+  <!-- 数据管理 -->
+  <view class="section">
+    <view class="section-title">数据管理</view>
+    <view class="action-item card" bindtap="onExportData">
+      <view class="action-text">📤 导出数据</view>
+      <view class="action-desc">将所有数据复制到剪贴板</view>
+    </view>
+    <view class="action-item card danger" bindtap="onClearAllData">
+      <view class="action-text">🗑️ 清空所有数据</view>
+      <view class="action-desc">此操作不可恢复，请谨慎</view>
+    </view>
+  </view>
+
+  <!-- 关于 -->
+  <view class="section">
+    <view class="about-card card">
+      <view class="about-title">教师日历 v1.0</view>
+      <view class="about-text">一款帮助教师管理课程和日程的小程序</view>
+      <view class="about-text">功能：课程表管理、日历视图、备注提醒</view>
+    </view>
+  </view>
+</view>

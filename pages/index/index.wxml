@@ -1,0 +1,67 @@
+<view class="index-container">
+  <!-- 假期倒计时 -->
+  <view class="holiday-card card" wx:if="{{holidayInfo}}">
+    <view class="holiday-content">
+      <view class="holiday-days">{{holidayInfo.daysUntil}}</view>
+      <view class="holiday-text">距离{{holidayInfo.name}}还有</view>
+      <view class="holiday-dates">{{holidayInfo.startDate}} - {{holidayInfo.endDate}}</view>
+    </view>
+  </view>
+
+  <!-- 今日信息卡片 -->
+  <view class="today-card card">
+    <view class="today-header flex-between">
+      <view class="flex-column">
+        <view class="today-date">{{todayDate}}</view>
+        <view class="today-weekday">星期{{todayWeekday}}</view>
+      </view>
+      <view class="calendar-btn" bindtap="onGoToCalendar">
+        <view class="btn-icon">📅</view>
+        <view class="btn-text">查看日历</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日课程 -->
+  <view class="section">
+    <view class="section-header flex-between">
+      <view class="section-title">今日课程</view>
+      <view class="add-btn" bindtap="onAddCourse">+</view>
+    </view>
+
+    <view wx:if="{{todayCourses.length > 0}}">
+      <view class="course-card card" wx:for="{{todayCourses}}" wx:key="id" data-id="{{item.id}}" bindtap="onCourseClick">
+        <view class="course-time">{{item.startTime}} - {{item.endTime}}</view>
+        <view class="course-name">{{item.name}}</view>
+        <view class="course-location" wx:if="{{item.location}}">📍 {{item.location}}</view>
+        <view class="course-class" wx:if="{{item.className}}">👥 {{item.className}}</view>
+      </view>
+    </view>
+    <view wx:else class="empty-state">
+      <view class="empty-state-icon">📚</view>
+      <view class="empty-state-text">今天暂无课程</view>
+    </view>
+  </view>
+
+  <!-- 今日代办 -->
+  <view class="section">
+    <view class="section-header flex-between">
+      <view class="section-title">今日代办</view>
+      <view class="add-btn" bindtap="onAddTodo">+</view>
+    </view>
+
+    <view wx:if="{{todayTodos.length > 0}}">
+      <view class="todo-card card" wx:for="{{todayTodos}}" wx:key="id" data-id="{{item.id}}">
+        <view class="todo-header flex-between" bindtap="onTodoClick">
+          <view class="todo-title">{{item.content}}</view>
+          <view class="todo-priority" wx:if="{{item.priority}}">{{item.priority}}</view>
+        </view>
+        <view class="todo-time" wx:if="{{item.time}}">⏰ {{item.time}}</view>
+      </view>
+    </view>
+    <view wx:else class="empty-state">
+      <view class="empty-state-icon">✅</view>
+      <view class="empty-state-text">暂无代办事项</view>
+    </view>
+  </view>
+</view>

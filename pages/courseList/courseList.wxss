@@ -1,0 +1,134 @@
+.course-list-container {
+  padding: 15rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 搜索框 */
+.search-bar {
+  margin-bottom: 15rpx;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12rpx 15rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  background-color: #f9f9f9;
+}
+
+.search-placeholder {
+  color: #ccc;
+}
+
+/* 筛选标签 */
+.filter-tabs {
+  display: flex;
+  gap: 10rpx;
+  margin-bottom: 15rpx;
+}
+
+.filter-btn {
+  padding: 8rpx 16rpx;
+  background-color: #fff;
+  border: 1rpx solid #ddd;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: #4A90E2;
+  color: white;
+  border-color: #4A90E2;
+}
+
+/* 课程列表 */
+.course-list {
+  margin-bottom: 60rpx;
+}
+
+.course-item {
+  margin-bottom: 12rpx;
+  cursor: pointer;
+  position: relative;
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15rpx;
+}
+
+.course-info-left {
+  flex: 1;
+}
+
+.course-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.course-type {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.delete-btn {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #F5222D;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  cursor: pointer;
+}
+
+/* 课程详情 */
+.course-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.detail-item {
+  display: flex;
+  gap: 10rpx;
+}
+
+.detail-item .label {
+  color: #999;
+  font-size: 24rpx;
+  min-width: 50rpx;
+}
+
+.detail-item .value {
+  color: #666;
+  font-size: 24rpx;
+}
+
+/* 浮动按钮 */
+.float-btn {
+  position: fixed;
+  bottom: 80rpx;
+  right: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  box-shadow: 0 4rpx 12rpx rgba(74, 144, 226, 0.3);
+  cursor: pointer;
+}

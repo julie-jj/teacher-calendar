@@ -1,0 +1,59 @@
+<view class="course-list-container">
+  <!-- 搜索框 -->
+  <view class="search-bar card">
+    <input type="text" placeholder="搜索课程或班级"
+      bindinput="onSearchInput"
+      placeholder-class="search-placeholder" />
+  </view>
+
+  <!-- 筛选按钮 -->
+  <view class="filter-tabs">
+    <view class="filter-btn {{filterType === 'all' ? 'active' : ''}}" data-type="all" bindtap="onFilterChange">
+      全部
+    </view>
+    <view class="filter-btn {{filterType === 'weekly' ? 'active' : ''}}" data-type="weekly" bindtap="onFilterChange">
+      周期性
+    </view>
+    <view class="filter-btn {{filterType === 'once' ? 'active' : ''}}" data-type="once" bindtap="onFilterChange">
+      一次性
+    </view>
+  </view>
+
+  <!-- 课程列表 -->
+  <view class="course-list">
+    <view wx:if="{{filteredCourses.length > 0}}">
+      <view class="course-item card" wx:for="{{filteredCourses}}" wx:key="id" data-id="{{item.id}}" bindtap="onCourseClick">
+        <view class="course-header flex-between">
+          <view class="course-info-left">
+            <view class="course-name">{{item.name}}</view>
+            <view class="course-type" wx:if="{{item.repeatType === 'weekly'}}">📅 周期性课程</view>
+            <view class="course-type" wx:else>📄 一次性课程</view>
+          </view>
+          <view class="delete-btn" data-id="{{item.id}}" bindtap="onDeleteCourse">✕</view>
+        </view>
+        
+        <view class="course-details">
+          <view class="detail-item">
+            <view class="label">时间</view>
+            <view class="value">{{item.startTime}} - {{item.endTime}}</view>
+          </view>
+          <view class="detail-item" wx:if="{{item.className}}">
+            <view class="label">班级</view>
+            <view class="value">{{item.className}}</view>
+          </view>
+          <view class="detail-item" wx:if="{{item.location}}">
+            <view class="label">地点</view>
+            <view class="value">{{item.location}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="empty-state">
+      <view class="empty-state-icon">📚</view>
+      <view class="empty-state-text">还没有课程，点击下方按钮添加</view>
+    </view>
+  </view>
+
+  <!-- 浮动按钮 -->
+  <view class="float-btn" bindtap="onAddCourse">+</view>
+</view>

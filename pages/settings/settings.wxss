@@ -1,0 +1,172 @@
+.settings-container {
+  padding: 15rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.section {
+  margin-bottom: 20rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+  padding: 0 10rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-btn {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  cursor: pointer;
+}
+
+/* 假期项 */
+.holiday-item {
+  margin-bottom: 10rpx;
+}
+
+.holiday-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+
+.holiday-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.delete-btn {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #F5222D;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  cursor: pointer;
+}
+
+.holiday-date {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 添加假期表单 */
+.add-holiday-form {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.form-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.form-group {
+  margin-bottom: 15rpx;
+}
+
+.form-label {
+  display: block;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 8rpx;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12rpx 15rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10rpx;
+  margin-top: 20rpx;
+}
+
+.form-actions .btn {
+  flex: 1;
+  padding: 12rpx 20rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #4A90E2;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* 操作项 */
+.action-item {
+  margin-bottom: 10rpx;
+  padding: 15rpx;
+  cursor: pointer;
+}
+
+.action-item.danger .action-text {
+  color: #F5222D;
+}
+
+.action-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.action-desc {
+  font-size: 20rpx;
+  color: #999;
+}
+
+/* 关于 */
+.about-card {
+  text-align: center;
+  padding: 30rpx 20rpx;
+}
+
+.about-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.about-text {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.8;
+  margin: 5rpx 0;
+}

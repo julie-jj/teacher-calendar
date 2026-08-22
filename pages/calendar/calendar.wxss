@@ -1,0 +1,133 @@
+.calendar-container {
+  padding: 0;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.calendar-header {
+  padding: 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.month-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  gap: 10rpx;
+}
+
+.view-mode-btn {
+  padding: 8rpx 15rpx;
+  background-color: #f0f0f0;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.add-btn {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+/* 周标题 */
+.weekday-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10rpx 0;
+  background-color: #f9f9f9;
+  border-bottom: 1rpx solid #eee;
+}
+
+.weekday-item {
+  text-align: center;
+  padding: 10rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #666;
+}
+
+/* 日期网格 */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 1rpx solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rpx;
+  position: relative;
+  cursor: pointer;
+}
+
+.calendar-day.current-month {
+  background-color: #fff;
+}
+
+.calendar-day.other-month {
+  background-color: #f9f9f9;
+  opacity: 0.5;
+}
+
+.calendar-day.selected {
+  background-color: #E6F4FF;
+  border: 2rpx solid #4A90E2;
+}
+
+.day-number {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.day-courses {
+  margin-top: 4rpx;
+}
+
+.course-indicator {
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #4A90E2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-count {
+  font-size: 10rpx;
+  color: white;
+  font-weight: bold;
+}
+
+/* 底部导航 */
+.calendar-footer {
+  padding: 20rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.nav-btn {
+  padding: 12rpx 24rpx;
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}

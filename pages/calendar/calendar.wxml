@@ -1,0 +1,48 @@
+<view class="calendar-container">
+  <!-- 顶部导航 -->
+  <view class="calendar-header">
+    <view class="flex-between">
+      <view class="header-left">
+        <view class="month-title">{{currentYear}}年{{currentMonth}}月</view>
+      </view>
+      <view class="header-right flex-row">
+        <view class="view-mode-btn" bindtap="onToggleViewMode">
+          {{viewMode === 'month' ? '周视图' : '月视图'}}
+        </view>
+        <view class="add-btn" bindtap="onAddCourse">+</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 周标题 -->
+  <view class="weekday-header">
+    <view class="weekday-item">日</view>
+    <view class="weekday-item">一</view>
+    <view class="weekday-item">二</view>
+    <view class="weekday-item">三</view>
+    <view class="weekday-item">四</view>
+    <view class="weekday-item">五</view>
+    <view class="weekday-item">六</view>
+  </view>
+
+  <!-- 日期网格 -->
+  <view class="calendar-grid">
+    <view class="calendar-day" wx:for="{{monthDays}}" wx:key="date"
+      data-date="{{item.date}}"
+      bindtap="onDayClick"
+      class="{{item.isCurrentMonth ? 'current-month' : 'other-month'}} {{selectedDate === item.date ? 'selected' : ''}}">
+      <view class="day-number">{{item.day}}</view>
+      <view class="day-courses">
+        <view class="course-indicator" wx:if="{{coursesMap[item.date] && coursesMap[item.date].length > 0}}">
+          <view class="course-count">{{coursesMap[item.date].length}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 月份导航 -->
+  <view class="calendar-footer flex-between">
+    <view class="nav-btn" bindtap="onPrevMonth">← 上月</view>
+    <view class="nav-btn" bindtap="onNextMonth">下月 →</view>
+  </view>
+</view>
